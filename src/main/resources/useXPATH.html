@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Página Compleja para XPath</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header>
     <h1 class="titulo-principal">Bienvenidos a la página de prueba</h1>
-    <nav>
+    <nav class="navigation">
         <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Servicios</a></li>
@@ -17,31 +18,43 @@
 </header>
 
 <main>
-    <section>
+    <section class="container">
         <h2>Formulario de Registro</h2>
         <form>
-            <label>Nombre completo:</label>
-            <input type="text" placeholder="Ingrese su nombre completo" /><br><br>
+            <label>Nombre completo:
+                <input type="text" placeholder="Ingrese su nombre completo" />
+            </label><br><br>
 
-            <label>Correo electrónico:</label>
-            <input type="email" placeholder="ejemplo@correo.com" /><br><br>
+            <label>Correo electrónico:
+                <input type="email" placeholder="ejemplo@correo.com" />
+            </label><br><br>
 
             <label>Género:</label><br>
-            <input type="radio" value="masculino" /> Masculino<br>
-            <input type="radio" value="femenino" /> Femenino<br><br>
+            <label>
+                <input type="radio" value="masculino" /> Masculino
+            </label>
+            <label>
+                <input type="radio" value="femenino" /> Femenino
+            </label> <br><br>
 
             <label>Preferencias:</label><br>
-            <input type="checkbox" value="email" /> Email<br>
-            <input type="checkbox" value="sms" /> SMS<br><br>
+            <label>
+                <input type="checkbox" value="email" />
+            </label> Email<br>
+            <label>
+                <input type="checkbox" value="sms" />
+            </label> SMS<br><br>
 
-            <textarea placeholder="Comentarios adicionales..."></textarea><br><br>
+            <label>Agregue su comentario aquí: <br>
+                <textarea placeholder="Comentarios adicionales..."></textarea>
+            </label><br><br>
 
             <button type="submit">Enviar</button>
             <button type="reset">Limpiar</button>
         </form>
     </section>
 
-    <section>
+    <section class="container">
         <h2>Artículos recientes</h2>
         <div class="articulo">
             <h3>Cómo usar XPath en pruebas automatizadas</h3>
@@ -56,7 +69,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="container">
         <h2>Tabla de usuarios</h2>
         <table>
             <tr>
