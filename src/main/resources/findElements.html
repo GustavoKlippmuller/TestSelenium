@@ -3,46 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario de Prueba</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Formulario de Prueba</h1>
 
-    <!-- Input de texto -->
-    <label for="inputNombre">Nombre:</label>
-    <input type="text" id="inputNombre" placeholder="Ingrese su nombre"/><br><br>
+    <div class="container">
+        <!-- Input de texto -->
+        <label for="inputNombre">Nombre:
+            <input type="text" id="inputNombre" placeholder="Ingrese su nombre"/><br><br>
+        </label>
 
-    <!-- Radio buttons -->
-    <p>Seleccione su género:</p>
-    <input type="radio" id="radioMasculino" name="genero" value="masculino">
-    <label for="radioMasculino">Masculino</label><br>
+        <!-- Radio buttons -->
+        <p>Seleccione su género:</p>
+        <input type="radio" id="radioMasculino" name="genero" value="masculino">
+        <label for="radioMasculino">Masculino</label><br>
 
-    <input type="radio" id="radioFemenino" name="genero" value="femenino">
-    <label for="radioFemenino">Femenino</label><br>
+        <input type="radio" id="radioFemenino" name="genero" value="femenino">
+        <label for="radioFemenino">Femenino</label><br>
 
-    <input type="radio" id="radioOtro" name="genero" value="otro">
-    <label for="radioOtro">Otro</label><br>
+        <input type="radio" id="radioOtro" name="genero" value="otro">
+        <label for="radioOtro">Otro</label><br>
 
-    <input type="radio" id="radioPrefieroNoDecirlo" name="genero" value="prefieroNoDecirlo">
-    <label for="radioPrefieroNoDecirlo">Prefiero no decirlo</label><br><br>
+        <input type="radio" id="radioPrefieroNoDecirlo" name="genero" value="prefieroNoDecirlo">
+        <label for="radioPrefieroNoDecirlo">Prefiero no decirlo</label><br><br>
 
-    <!-- Checkboxes -->
-    <p>Intereses:</p>
-    <input type="checkbox" id="checkDeportes" value="deportes">
-    <label for="checkDeportes">Deportes</label><br>
+        <!-- Checkboxes -->
+        <p>Intereses:</p>
+        <input type="checkbox" id="checkDeportes" value="deportes">
+        <label for="checkDeportes">Deportes</label><br>
 
-    <input type="checkbox" id="checkMusica" value="musica">
-    <label for="checkMusica">Música</label><br>
+        <input type="checkbox" id="checkMusica" value="musica">
+        <label for="checkMusica">Música</label><br>
 
-    <input type="checkbox" id="checkLectura" value="lectura">
-    <label for="checkLectura">Lectura</label><br><br>
+        <input type="checkbox" id="checkLectura" value="lectura">
+        <label for="checkLectura">Lectura</label><br><br>
 
-    <!-- Textarea -->
-    <label for="textareaComentarios">Comentarios:</label><br>
-    <textarea id="textareaComentarios" rows="4" cols="50" placeholder="Escriba sus comentarios..."></textarea><br><br>
+        <!-- Textarea -->
+        <label for="textareaComentarios">Comentarios:</label><br>
+        <textarea id="textareaComentarios" rows="4" cols="50" placeholder="Escriba sus comentarios..."></textarea><br><br>
 
-    <!-- Botones -->
-    <button id="btnAceptar">Aceptar</button>
-    <button id="btnCancelar">Cancelar</button>
-
+        <!-- Botones -->
+        <button id="btnAceptar">Aceptar</button>
+        <button id="btnCancelar">Cancelar</button>
+    </div>
 </body>
 </html>
