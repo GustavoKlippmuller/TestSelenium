@@ -15,22 +15,22 @@ public class FindByCssSelectorTest {
         String path = Paths.get("src/main/resources/findElements.html").toUri().toString();
         driver.get(path);
 
-        validarInputNombre(driver);
-        validarRadioMasculino(driver);
-        validarRadioFemenino(driver);
-        validarRadioOtro(driver);
-        validarRadioPrefieroNoDecirlo(driver);
-        validarCheckDeportes(driver);
-        validarCheckMusica(driver);
-        validarCheckLectura(driver);
-        validarTextareaComentarios(driver);
-        validarBtnAceptar(driver);
-        validarBtnCancelar(driver);
+        validateInputNombre(driver);
+        validateRadioMasculino(driver);
+        validateRadioFemenino(driver);
+        validateRadioOtro(driver);
+        validateRadioPrefieroNoDecirlo(driver);
+        validateCheckDeportes(driver);
+        validateCheckMusica(driver);
+        validateCheckLectura(driver);
+        validateTextareaComentarios(driver);
+        validateBtnAceptar(driver);
+        validateBtnCancelar(driver);
 
         driver.quit();
     }
 
-    public static void validarInputNombre(WebDriver driver) {
+    public static void validateInputNombre(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector("#inputNombre"));
             System.out.println("El elemento inputNombre está presente");
@@ -39,7 +39,7 @@ public class FindByCssSelectorTest {
         }
     }
 
-    public static void validarRadioMasculino(WebDriver driver) {
+    public static void validateRadioMasculino(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector("#radioMasculino"));
             System.out.println("El elemento radioMasculino está presente");
@@ -48,7 +48,7 @@ public class FindByCssSelectorTest {
         }
     }
 
-    public static void validarRadioFemenino(WebDriver driver) {
+    public static void validateRadioFemenino(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector("#radioFemenino"));
             System.out.println("El elemento radioFemenino está presente");
@@ -57,7 +57,7 @@ public class FindByCssSelectorTest {
         }
     }
 
-    public static void validarRadioOtro(WebDriver driver) {
+    public static void validateRadioOtro(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector("#radioOtro"));
             System.out.println("El elemento radioOtro está presente");
@@ -66,7 +66,7 @@ public class FindByCssSelectorTest {
         }
     }
 
-    public static void validarRadioPrefieroNoDecirlo(WebDriver driver) {
+    public static void validateRadioPrefieroNoDecirlo(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector("#radioPrefieroNoDecirlo"));
             System.out.println("El elemento radioPrefieroNoDecirlo está presente");
@@ -75,7 +75,7 @@ public class FindByCssSelectorTest {
         }
     }
 
-    public static void validarCheckDeportes(WebDriver driver) {
+    public static void validateCheckDeportes(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector("#checkDeportes"));
             System.out.println("El elemento checkDeportes está presente");
@@ -84,7 +84,7 @@ public class FindByCssSelectorTest {
         }
     }
 
-    public static void validarCheckMusica(WebDriver driver) {
+    public static void validateCheckMusica(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector("#checkMusica"));
             System.out.println("El elemento checkMusica está presente");
@@ -93,7 +93,7 @@ public class FindByCssSelectorTest {
         }
     }
 
-    public static void validarCheckLectura(WebDriver driver) {
+    public static void validateCheckLectura(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector("#checkLectura"));
             System.out.println("El elemento checkLectura está presente");
@@ -102,7 +102,7 @@ public class FindByCssSelectorTest {
         }
     }
 
-    public static void validarTextareaComentarios(WebDriver driver) {
+    public static void validateTextareaComentarios(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector("#textareaComentarios"));
             System.out.println("El elemento textareaComentarios está presente");
@@ -111,7 +111,7 @@ public class FindByCssSelectorTest {
         }
     }
 
-    public static void validarBtnAceptar(WebDriver driver) {
+    public static void validateBtnAceptar(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector("#btnAceptar"));
             System.out.println("El elemento btnAceptar está presente");
@@ -120,9 +120,9 @@ public class FindByCssSelectorTest {
         }
     }
 
-    public static void validarBtnCancelar(WebDriver driver) {
+    public static void validateBtnCancelar(WebDriver driver) {
         try {
-            driver.findElement(By.cssSelector("#btn\\ Cancelar")); // porque el ID tiene un espacio
+            driver.findElement(By.cssSelector("#btn\\ Cancelar")); // El ID tiene un espacio
             System.out.println("El elemento btnCancelar está presente");
         } catch (NoSuchElementException e) {
             System.out.println("El elemento btnCancelar NO está presente");

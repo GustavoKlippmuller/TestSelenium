@@ -15,31 +15,31 @@ public class UseCssOrXpathTest {
         String path = Paths.get("src/main/resources/useXPATH.html").toUri().toString();
         driver.get(path);
 
-        validarTituloPrincipal(driver);
-        validarLinksDeNavegacion(driver);
-        validarInputNombre(driver);
-        validarInputEmail(driver);
-        validarRadiosGenero(driver);
-        validarCheckboxPreferencias(driver);
-        validarTextareaComentarios(driver);
-        validarBotonesFormulario(driver);
-        validarSubtituloXPath(driver);
-        validarParrafoXPath(driver);
-        validarLinkLeerMas(driver);
-        validarSubtituloBuenasPracticas(driver);
-        validarParrafoBuenasPracticas(driver);
-        validarLinkVerDetalles(driver);
-        validarTitulosH2(driver);
-        validarFilaUsuarioAna(driver);
-        validarUsuarioJuan(driver);
-        validarRolEditor(driver);
-        validarTextoDeDerechos(driver);
-        validarPoliticaPrivacidad(driver);
+        validateMainTitle(driver);
+        validateNavigationLinks(driver);
+        validateInputName(driver);
+        validateInputEmail(driver);
+        validateGenderRadios(driver);
+        validatePreferencesCheckboxes(driver);
+        validateCommentsTextarea(driver);
+        validateFormButtons(driver);
+        validateSubTitleXpath(driver);
+        validateParagraphXpath(driver);
+        validateReadMoreLink(driver);
+        validateBestPracticesSubtitle(driver);
+        validateBestPracticesParagraph(driver);
+        validateViewDetailsLink(driver);
+        validateH2Titles(driver);
+        validateAnaRow(driver);
+        validateJuanUser(driver);
+        validateEditorRole(driver);
+        validateCopyrightText(driver);
+        validatePrivacyPolicyLink(driver);
 
         driver.quit();
     }
 
-    public static void validarTituloPrincipal(WebDriver driver) {
+    public static void validateMainTitle(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector(".titulo-principal"));
             System.out.println("El título principal está presente");
@@ -48,7 +48,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarLinksDeNavegacion(WebDriver driver) {
+    public static void validateNavigationLinks(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//a[text()='Inicio']"));
             System.out.println("El link Inicio está presente");
@@ -69,7 +69,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarInputNombre(WebDriver driver) {
+    public static void validateInputName(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector("input[placeholder='Ingrese su nombre completo']"));
             System.out.println("El input de nombre está presente");
@@ -78,7 +78,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarInputEmail(WebDriver driver) {
+    public static void validateInputEmail(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector("input[type='email']"));
             System.out.println("El input de email está presente");
@@ -87,7 +87,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarRadiosGenero(WebDriver driver) {
+    public static void validateGenderRadios(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector("input[type='radio'][value='masculino']"));
             System.out.println("El radio Masculino está presente");
@@ -102,7 +102,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarCheckboxPreferencias(WebDriver driver) {
+    public static void validatePreferencesCheckboxes(WebDriver driver) {
         try {
             driver.findElement(By.cssSelector("input[type='checkbox'][value='email']"));
             System.out.println("El checkbox Email está presente");
@@ -117,7 +117,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarTitulosH2(WebDriver driver) {
+    public static void validateH2Titles(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//h2[text()='Formulario de Registro']"));
             System.out.println("El h2 Formulario de Registro está presente");
@@ -140,7 +140,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarTextareaComentarios(WebDriver driver) {
+    public static void validateCommentsTextarea(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//textarea[@placeholder='Comentarios adicionales...']"));
             System.out.println("El textarea de comentarios está presente");
@@ -149,7 +149,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarBotonesFormulario(WebDriver driver) {
+    public static void validateFormButtons(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//button[text()='Enviar']"));
             System.out.println("El botón Enviar está presente");
@@ -164,7 +164,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarSubtituloXPath(WebDriver driver) {
+    public static void validateSubTitleXpath(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//h3[text()='Cómo usar XPath en pruebas automatizadas']"));
             System.out.println("El h3 de XPath está presente");
@@ -173,7 +173,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarParrafoXPath(WebDriver driver) {
+    public static void validateParagraphXpath(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//p[contains(text(),'XPath es una herramienta poderosa')]"));
             System.out.println("El párrafo de XPath está presente");
@@ -182,7 +182,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarLinkLeerMas(WebDriver driver) {
+    public static void validateReadMoreLink(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//a[text()='Leer más']"));
             System.out.println("El link Leer más está presente");
@@ -191,7 +191,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarSubtituloBuenasPracticas(WebDriver driver) {
+    public static void validateBestPracticesSubtitle(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//h3[text()='Buenas prácticas de testing']"));
             System.out.println("El h3 de Buenas prácticas está presente");
@@ -200,7 +200,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarParrafoBuenasPracticas(WebDriver driver) {
+    public static void validateBestPracticesParagraph(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//p[contains(text(),'tests claros y mantenibles')]"));
             System.out.println("El párrafo de Buenas prácticas está presente");
@@ -209,7 +209,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarLinkVerDetalles(WebDriver driver) {
+    public static void validateViewDetailsLink(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//a[text()='Ver detalles']"));
             System.out.println("El link Ver detalles está presente");
@@ -218,7 +218,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarFilaUsuarioAna(WebDriver driver) {
+    public static void validateAnaRow(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//td[text()='ana@test.com']"));
             System.out.println("El usuario ana@test.com está presente");
@@ -233,7 +233,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarUsuarioJuan(WebDriver driver) {
+    public static void validateJuanUser(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//td[text()='juan@test.com']"));
             System.out.println("El usuario juan@test.com está presente");
@@ -242,7 +242,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarRolEditor(WebDriver driver) {
+    public static void validateEditorRole(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//td[text()='Editor']"));
             System.out.println("El rol Editor está presente");
@@ -251,7 +251,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarTextoDeDerechos(WebDriver driver) {
+    public static void validateCopyrightText(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//p[contains(text(),'Todos los derechos')]"));
             System.out.println("El texto de derechos reservados está presente");
@@ -260,7 +260,7 @@ public class UseCssOrXpathTest {
         }
     }
 
-    public static void validarPoliticaPrivacidad(WebDriver driver) {
+    public static void validatePrivacyPolicyLink(WebDriver driver) {
         try {
             driver.findElement(By.xpath("//a[text()='Política de privacidad']"));
             System.out.println("El link Política de privacidad está presente");
