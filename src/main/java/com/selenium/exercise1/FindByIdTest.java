@@ -122,7 +122,7 @@ public class FindByIdTest {
 
     public static void validateBtnCancelar(WebDriver driver) {
         try {
-            driver.findElement(By.id("btn Cancelar"));
+            driver.findElement(By.id("btnCancelar"));
             System.out.println("El elemento btnCancelar está presente");
         } catch (NoSuchElementException e) {
             System.out.println("El elemento btnCancelar NO está presente");

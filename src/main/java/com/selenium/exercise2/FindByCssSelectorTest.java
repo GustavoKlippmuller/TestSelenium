@@ -122,7 +122,7 @@ public class FindByCssSelectorTest {
 
     public static void validateBtnCancelar(WebDriver driver) {
         try {
-            driver.findElement(By.cssSelector("#btn\\ Cancelar")); // El ID tiene un espacio
+            driver.findElement(By.cssSelector("#btnCancelar")); // El ID tiene un espacio
             System.out.println("El elemento btnCancelar está presente");
         } catch (NoSuchElementException e) {
             System.out.println("El elemento btnCancelar NO está presente");

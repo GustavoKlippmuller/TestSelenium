@@ -122,7 +122,7 @@ public class FindByXpathTest {
 
     public static void validateBtnCancelar(WebDriver driver) {
         try {
-            driver.findElement(By.xpath("//*[@id='btn Cancelar']"));
+            driver.findElement(By.xpath("//*[@id='btnCancelar']"));
             System.out.println("El elemento btnCancelar está presente");
         } catch (NoSuchElementException e) {
             System.out.println("El elemento btnCancelar NO está presente");
