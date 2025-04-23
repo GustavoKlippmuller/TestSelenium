@@ -22,11 +22,14 @@ public class ValidateWithAssertsTest {
     @Test
     public void verifyNameLabelTest() {
         WebElement label = driver.findElement(By.cssSelector("label[for='inputNombre']"));
+        Assert.assertNotNull(label, "El label con for='inputNombre' no existe.");
         Assert.assertEquals(label.getText(), "Nombre:", "El texto de la etiqueta no es 'Nombre:'");
     }
+
     @Test
     public void verifyInputNameTest() {
         WebElement input = driver.findElement(By.id("inputNombre"));
+        Assert.assertNotNull(input, "El input con id='inputNombre' no existe.");
 
         String type = input.getAttribute("type");
         Assert.assertEquals(type, "text", "El tipo del input no es 'text'");
@@ -36,46 +39,53 @@ public class ValidateWithAssertsTest {
     }
 
     @Test
-    public void verifyParagraphGenderTest(){
-    WebElement paragraph = driver.findElement(By.xpath("//p[text()='Seleccione su género:']"));
+    public void verifyParagraphGenderTest() {
+        WebElement paragraph = driver.findElement(By.xpath("//p[text()='Seleccione su género:']"));
+        Assert.assertNotNull(paragraph, "El párrafo con el texto 'Seleccione su género:' no existe.");
         Assert.assertEquals(paragraph.getText().trim(), "Seleccione su género:", "El texto del párrafo no es el esperado.");
     }
 
     @Test
-    public void verifyRadioButtonsLabelTest(){
-        //Masculino
+    public void verifyRadioButtonsLabelTest() {
         WebElement labelMasculino = driver.findElement(By.cssSelector("label[for='radioMasculino']"));
-        Assert.assertEquals(labelMasculino.getText(),"Masculino","El texto de la etiqueta 'radioMasculino' no es 'Masculino'");
-        // Femenino
+        Assert.assertNotNull(labelMasculino, "El label 'radioMasculino' no existe.");
+        Assert.assertEquals(labelMasculino.getText(), "Masculino", "El texto de la etiqueta 'radioMasculino' no es 'Masculino'");
+
         WebElement labelFemenino = driver.findElement(By.cssSelector("label[for='radioFemenino']"));
+        Assert.assertNotNull(labelFemenino, "El label 'radioFemenino' no existe.");
         Assert.assertEquals(labelFemenino.getText().trim(), "Femenino", "La etiqueta 'radioFemenino' no dice 'Femenino'");
-        // Otro
+
         WebElement labelOtro = driver.findElement(By.cssSelector("label[for='radioOtro']"));
+        Assert.assertNotNull(labelOtro, "El label 'radioOtro' no existe.");
         Assert.assertEquals(labelOtro.getText().trim(), "Otro", "La etiqueta 'radioOtro' no dice 'Otro'");
-        // Prefiero no decirlo
+
         WebElement labelNoDecirlo = driver.findElement(By.cssSelector("label[for='radioPrefieroNoDecirlo']"));
+        Assert.assertNotNull(labelNoDecirlo, "El label 'radioPrefieroNoDecirlo' no existe.");
         Assert.assertEquals(labelNoDecirlo.getText().trim(), "Prefiero no decirlo", "La etiqueta 'radioPrefieroNoDecirlo' no dice 'Prefiero no decirlo'");
     }
 
     @Test
     public void verifyRadioButtonsInputsTest() {
-        // Masculino
         WebElement inputMasculino = driver.findElement(By.id("radioMasculino"));
+        Assert.assertNotNull(inputMasculino, "El input 'radioMasculino' no existe.");
         Assert.assertEquals(inputMasculino.getAttribute("type"), "radio", "El tipo no es 'radio'");
         Assert.assertEquals(inputMasculino.getAttribute("name"), "genero", "El name no es 'genero'");
         Assert.assertEquals(inputMasculino.getAttribute("value"), "masculino", "El value no es 'masculino'");
-        // Femenino
+
         WebElement inputFemenino = driver.findElement(By.id("radioFemenino"));
+        Assert.assertNotNull(inputFemenino, "El input 'radioFemenino' no existe.");
         Assert.assertEquals(inputFemenino.getAttribute("type"), "radio", "El tipo no es 'radio'");
         Assert.assertEquals(inputFemenino.getAttribute("name"), "genero", "El name no es 'genero'");
         Assert.assertEquals(inputFemenino.getAttribute("value"), "femenino", "El value no es 'femenino'");
-        // Otro
+
         WebElement inputOtro = driver.findElement(By.id("radioOtro"));
+        Assert.assertNotNull(inputOtro, "El input 'radioOtro' no existe.");
         Assert.assertEquals(inputOtro.getAttribute("type"), "radio", "El tipo no es 'radio'");
         Assert.assertEquals(inputOtro.getAttribute("name"), "genero", "El name no es 'genero'");
         Assert.assertEquals(inputOtro.getAttribute("value"), "otro", "El value no es 'otro'");
-        // Prefiero no decirlo
+
         WebElement inputNoDecirlo = driver.findElement(By.id("radioPrefieroNoDecirlo"));
+        Assert.assertNotNull(inputNoDecirlo, "El input 'radioPrefieroNoDecirlo' no existe.");
         Assert.assertEquals(inputNoDecirlo.getAttribute("type"), "radio", "El tipo no es 'radio'");
         Assert.assertEquals(inputNoDecirlo.getAttribute("name"), "genero", "El name no es 'genero'");
         Assert.assertEquals(inputNoDecirlo.getAttribute("value"), "prefieroNoDecirlo", "El value no es 'prefieroNoDecirlo'");
@@ -83,56 +93,65 @@ public class ValidateWithAssertsTest {
 
     @Test
     public void verifyCheckBoxesLabelTest() {
-        // Deportes
         WebElement labelDeportes = driver.findElement(By.cssSelector("label[for='checkDeportes']"));
+        Assert.assertNotNull(labelDeportes, "El label 'checkDeportes' no existe.");
         Assert.assertEquals(labelDeportes.getText(), "Deportes", "El texto del CheckBox no es 'Deportes'");
-        // Música
+
         WebElement labelMusica = driver.findElement(By.cssSelector("label[for='checkMusica']"));
+        Assert.assertNotNull(labelMusica, "El label 'checkMusica' no existe.");
         Assert.assertEquals(labelMusica.getText(), "Música", "El texto del CheckBox no es 'Música'");
-        // Lectura
+
         WebElement labelLectura = driver.findElement(By.cssSelector("label[for='checkLectura']"));
+        Assert.assertNotNull(labelLectura, "El label 'checkLectura' no existe.");
         Assert.assertEquals(labelLectura.getText(), "Lectura", "El texto del CheckBox no es 'Lectura'");
     }
 
     @Test
     public void verifyCheckBoxesInputsTest() {
-        // Deportes
         WebElement inputDeportes = driver.findElement(By.id("checkDeportes"));
+        Assert.assertNotNull(inputDeportes, "El input 'checkDeportes' no existe.");
         Assert.assertEquals(inputDeportes.getAttribute("type"), "checkbox", "El tipo no es 'checkbox'");
         Assert.assertEquals(inputDeportes.getAttribute("value"), "deportes", "El valor no es 'deportes'");
-        // Música
+
         WebElement inputMusica = driver.findElement(By.id("checkMusica"));
+        Assert.assertNotNull(inputMusica, "El input 'checkMusica' no existe.");
         Assert.assertEquals(inputMusica.getAttribute("type"), "checkbox", "El tipo no es 'checkbox'");
         Assert.assertEquals(inputMusica.getAttribute("value"), "musica", "El valor no es 'musica'");
-        // Lectura
+
         WebElement inputLectura = driver.findElement(By.id("checkLectura"));
+        Assert.assertNotNull(inputLectura, "El input 'checkLectura' no existe.");
         Assert.assertEquals(inputLectura.getAttribute("type"), "checkbox", "El tipo no es 'checkbox'");
         Assert.assertEquals(inputLectura.getAttribute("value"), "lectura", "El valor no es 'lectura'");
     }
+
     @Test
     public void verifyCommentaryLabelTest() {
         WebElement labelComentarios = driver.findElement(By.cssSelector("label[for=textareaComentarios]"));
-        Assert.assertEquals(labelComentarios.getText(),"Comentarios:","El texto del label no es 'Comentarios:'");
+        Assert.assertNotNull(labelComentarios, "El label de comentarios no existe.");
+        Assert.assertEquals(labelComentarios.getText(), "Comentarios:", "El texto del label no es 'Comentarios:'");
     }
 
     @Test
-    public void verifyTextAreaTest(){
+    public void verifyTextAreaTest() {
         WebElement textArea = driver.findElement(By.id("textareaComentarios"));
-        Assert.assertEquals(textArea.getAttribute("rows"),"4","Las filas del area de texto no son '4'");
-        Assert.assertEquals(textArea.getAttribute("cols"),"50","Las columnas del area de texto no son '50'");
-        Assert.assertEquals(textArea.getAttribute("placeholder"),"Escriba sus comentarios...","El placeholder no dice 'Escriba sus comentarios...'");
+        Assert.assertNotNull(textArea, "El textarea no existe.");
+        Assert.assertEquals(textArea.getAttribute("rows"), "4", "Las filas del area de texto no son '4'");
+        Assert.assertEquals(textArea.getAttribute("cols"), "50", "Las columnas del area de texto no son '50'");
+        Assert.assertEquals(textArea.getAttribute("placeholder"), "Escriba sus comentarios...", "El placeholder no dice 'Escriba sus comentarios...'");
     }
 
     @Test
-    public void verifyButtonAcceptTest(){
+    public void verifyButtonAcceptTest() {
         WebElement btnAceptar = driver.findElement(By.id("btnAceptar"));
-        Assert.assertEquals(btnAceptar.getText(),"Aceptar","El texto del boton no es 'Aceptar'");
+        Assert.assertNotNull(btnAceptar, "El botón 'Aceptar' no existe.");
+        Assert.assertEquals(btnAceptar.getText(), "Aceptar", "El texto del botón no es 'Aceptar'");
     }
 
     @Test
-    public void verifyButtonCancelTest(){
+    public void verifyButtonCancelTest() {
         WebElement btnCancelar = driver.findElement(By.id("btnCancelar"));
-        Assert.assertEquals(btnCancelar.getText(),"Cancelar","El texto del boton no es 'Cancelar'");
+        Assert.assertNotNull(btnCancelar, "El botón 'Cancelar' no existe.");
+        Assert.assertEquals(btnCancelar.getText(), "Cancelar", "El texto del botón no es 'Cancelar'");
     }
 
     @AfterClass
