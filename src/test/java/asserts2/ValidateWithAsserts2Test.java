@@ -31,7 +31,7 @@ public class ValidateWithAsserts2Test {
 
     @Test
     public void validateTittleTest(){
-        WebElement tittle = driver.findElement(By.cssSelector("h1.title-principal"));
+        WebElement tittle = driver.findElement(By.cssSelector("h1.titulo-principal"));
         Assert.assertNotNull(tittle,"El title no existe");
         Assert.assertEquals(tittle.getText(),"Bienvenidos a la página de prueba","El title no concide");
     }
@@ -41,10 +41,16 @@ public class ValidateWithAsserts2Test {
         List<WebElement> links = driver.findElements(By.cssSelector("nav.navigation a"));
         Assert.assertEquals(links.size(), 3, "No hay 3 enlaces en la navegación.");
 
-        Assert.assertEquals(links.get(0).getText(), "Inicio");
-        Assert.assertEquals(links.get(1).getText(), "Servicios");
-        Assert.assertEquals(links.get(2).getText(), "Contacto");
+        Assert.assertNotNull(links.get(0), "El enlace 'Inicio' no existe.");
+        Assert.assertEquals(links.get(0).getText(), "Inicio", "El texto del primer enlace no es 'Inicio'");
+
+        Assert.assertNotNull(links.get(1), "El enlace 'Servicios' no existe.");
+        Assert.assertEquals(links.get(1).getText(), "Servicios", "El texto del segundo enlace no es 'Servicios'");
+
+        Assert.assertNotNull(links.get(2), "El enlace 'Contacto' no existe.");
+        Assert.assertEquals(links.get(2).getText(), "Contacto", "El texto del tercer enlace no es 'Contacto'");
     }
+
 
     @Test
     public void validateSubTittle1Test(){
@@ -73,7 +79,7 @@ public class ValidateWithAsserts2Test {
     @Test
     public void validateEmailTest(){
         WebElement email = driver.findElement(By.xpath("//label[contains(text(),'Correo electrónico:')]"));
-        Assert.assertNotNull(email,"El label 'Nombre Completo:' no existe");
+        Assert.assertNotNull(email,"El label 'Correo electrónico:' no existe");
 
         WebElement input = email.findElement(By.tagName("input"));
         Assert.assertNotNull(input, "El input de 'Correo electrónico:' no existe.");
@@ -180,7 +186,21 @@ public class ValidateWithAsserts2Test {
         List<WebElement> users = driver.findElements(By.cssSelector("table td"));
         Assert.assertEquals(users.size(), 4, "La tabla no tiene exactamente 2 usuarios.");
         Assert.assertEquals(users.get(0).getText(), "ana@test.com", "El primer usuario no es 'ana'");
+        Assert.assertEquals(users.get(1).getText(), "Administrador", "El rol del primer usuario no es 'Administrador'");
         Assert.assertEquals(users.get(2).getText(), "juan@test.com", "El segundo usuario no es 'juan'");
+        Assert.assertEquals(users.get(3).getText(), "Editor", "El rol del segundo usuario no es 'Editor'");
+    }
+
+    @Test
+    public void validateFooterTest(){
+            WebElement footer = driver.findElement(By.xpath("//footer/p"));
+            Assert.assertNotNull(footer, "El párrafo del pie de página no existe.");
+            Assert.assertEquals(footer.getText(), "© 2025 Todos los derechos reservados.", "El texto del pie de página no es el esperado.");
+
+            WebElement link = driver.findElement(By.xpath("//footer/a"));
+            Assert.assertNotNull(link, "El enlace del pie de página no existe.");
+            Assert.assertEquals(link.getText(), "Política de privacidad", "El texto del enlace de pie de página no es el esperado.");
+
     }
 
     @AfterClass
