@@ -18,7 +18,7 @@ public class UseXPath {
 
         validateByXPath(driver, "//input[@id='inputNombre']", "inputNombre");
         validateByXPath(driver, "//input[@id='radioMasculino']", "radioMasculino");
-        validateByXPath(driver, "//input[@id='radioFemenino']", "radioFemenino");
+        validateByXPath(driver, "//input[@id='radioFemenino']", "radioFemenino"); 
         validateByXPath(driver, "//input[@id='radioOtro']", "radioOtro");
         validateByXPath(driver, "//input[@id='radioPrefieroNoDecirlo']", "radioPrefieroNoDecirlo");
         validateByXPath(driver, "//input[@id='checkDeportes']", "checkDeportes");
